@@ -16,3 +16,23 @@ void generate_random_message(char *buffer, int bufferSize, int seed) {
     buffer[i] = random() % (91 - 33) + 33;
   }
 }
+
+int root_print(int rank, const char *format, ...){
+    if(rank != 0) return 0;
+    int result;
+    va_list args;
+    va_start(args, format);
+    result = vprintf(format, args);
+    va_end(args);
+    return result;
+}
+
+int log(int verbose, const char *format, ...){
+    if(!verbose) return 0;
+    int result;
+    va_list args;
+    va_start(args, format);
+    result = vprintf(format, args);
+    va_end(args);
+    return result;
+}
