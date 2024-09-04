@@ -25,6 +25,14 @@ int main(int argc, char **argv) {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+  // Checking the -mca components
+  char *btl_value = getenv("OMPI_MCA_btl");
+  if (btl_value != NULL) {
+    root_print(rank, "OMPI_MCA_btl is set to: %s\n", btl_value);
+  } else {
+    root_print(rank, "OMPI_MCA_btl is not set\n");
+  }
+
   // Handling arguments
   for (int i = 1; i < argc; i++) {
     // Checking -s arg for size
@@ -67,9 +75,9 @@ int main(int argc, char **argv) {
       }
     }
 
-    if(strcmp(argv[i], "-v")==0){
-        verbose = 1;
-        continue;
+    if (strcmp(argv[i], "-v") == 0) {
+      verbose = 1;
+      continue;
     }
 
     if (strcmp(argv[i], "--help") == 0) {
