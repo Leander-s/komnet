@@ -20,7 +20,7 @@ int ping_exchange_root_run(int size, int messageSize, int verbose) {
     }
 
     // Print what was read from node i.
-    log(verbose,"Root: Read '%s' from node %d.\n", (char *)recvBuffer, i);
+    log_print(verbose,"Root: Read '%s' from node %d.\n", (char *)recvBuffer, i);
   }
   return MPI_SUCCESS;
 }
@@ -37,7 +37,7 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose) {
   }
 
   // print what was read from root
-  log(verbose, "Node %d: Read '%s' from root.\n", rank, (char *)buffer);
+  log_print(verbose, "Node %d: Read '%s' from root.\n", rank, (char *)buffer);
 
   memset(buffer, 0, messageSize);
   sprintf(buffer, "Hello from %d", rank);

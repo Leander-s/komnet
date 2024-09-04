@@ -26,7 +26,7 @@ int pingpong_root_run(int size, int messageSize, int verbose) {
     }
 
     // Print what was read from node i.
-    log(verbose, "Root: Received from node %d : '%s'\n", i, (char *)buffer);
+    log_print(verbose, "Root: Received from node %d : '%s'\n", i, (char *)buffer);
   }
   free(buffer);
   return MPI_SUCCESS;
@@ -39,13 +39,13 @@ int pingpong_node_run(int rank, int messageSize, int verbose) {
   err = MPI_Recv((void *)buffer, messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD,
                  MPI_STATUS_IGNORE);
   if (err != MPI_SUCCESS) {
-    log(verbose, "Read error in %d\n", rank);
+    log_print(verbose, "Read error in %d\n", rank);
     free(buffer);
     return err;
   }
 
   // print what was read from root
-  log(verbose, "Node %d: Received from root : '%s'\n", rank, (char *)buffer);
+  log_print(verbose, "Node %d: Received from root : '%s'\n", rank, (char *)buffer);
 
   memset(buffer, 0, messageSize);
   generate_random_message(buffer, messageSize, time(NULL) * rank);

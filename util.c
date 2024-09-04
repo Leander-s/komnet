@@ -27,7 +27,7 @@ int root_print(int rank, const char *format, ...){
     return result;
 }
 
-int log(int verbose, const char *format, ...){
+int log_print(int verbose, const char *format, ...){
     if(!verbose) return 0;
     int result;
     va_list args;
