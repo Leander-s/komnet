@@ -1,28 +1,6 @@
-#include <errno.h>
-#include <mpi.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include "ping-pong.h"
 
-int string_to_int(char *str) {
-  errno = 0;
-  char *end;
-  const long i = strtol(str, &end, 10);
-  const int range_error = errno == ERANGE;
-  return (int)(i);
-}
-
-void generate_random_message(char *buffer, int bufferSize, int seed) {
-  // init rng
-  srandom(seed);
-
-  for (int i = 0; i < bufferSize; i++) {
-    buffer[i] = random() % (91 - 33) + 33;
-  }
-}
-
-int root_func(int size, int messageSize) {
+int pingpong_root_run(int size, int messageSize) {
   // technically sizof(char) = 1 but this gets the point across better
   char *buffer = (char *)malloc(sizeof(char) * messageSize);
   int err;
@@ -54,7 +32,7 @@ int root_func(int size, int messageSize) {
   return MPI_SUCCESS;
 }
 
-int other_func(int rank, int messageSize) {
+int pingpong_node_run(int rank, int messageSize) {
   char *buffer = (char *)malloc(sizeof(char) * messageSize);
   int err;
   memset(buffer, 0, messageSize);
@@ -110,9 +88,9 @@ int main(int argc, char **argv) {
     return 1;
   }
   if (rank == 0) {
-    root_func(size, messageSize);
+    pingpong_root_run(size, messageSize);
   } else {
-    other_func(rank, messageSize);
+    pingpong_node_run(rank, messageSize);
   }
   MPI_Finalize();
   return 0;
