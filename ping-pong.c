@@ -7,6 +7,7 @@ int root_func(int size) {
   char buffer[32];
   memset(buffer, 0, 32);
   int err;
+  sprintf(buffer, "Hello from root");
   for (int i = 1; i < size; i++) {
     err = MPI_Send((void*)buffer, 32, MPI_CHAR, i, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){
@@ -16,11 +17,14 @@ int root_func(int size) {
   }
   memset(buffer, 0, 32);
   for(int i = 1; i < size; i++){
-      err = MPI_Recv(buffer, 32, MPI_CHAR, i, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      err = MPI_Recv((void*)buffer, 32, MPI_CHAR, i, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
       if(err != MPI_SUCCESS){
           printf("Read error in root\n");
           return err;
       }
+
+      // Print what was read from node i.
+      printf("Root: Read '%s' from node %d.\n", (char*)buffer, i);
   }
   return MPI_SUCCESS;
 }
@@ -35,6 +39,10 @@ int other_func(int rank) {
     printf("Read error in %d\n", rank);
     return err;
   }
+
+  // print what was read from root
+  printf("Node %d: Read '%s' from root.\n", rank, (char*)buffer);
+
   memset(buffer, 0, 32);
   sprintf(buffer, "Hello from %d", rank);
   err = MPI_Send((void *)buffer, 32, MPI_CHAR, 0, 1, MPI_COMM_WORLD);
