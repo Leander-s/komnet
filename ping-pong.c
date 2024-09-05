@@ -11,28 +11,15 @@ int pingpong_root_run(int size, int messageSize, int verbose) {
   // Preparing buffer for send
   memset(buffer, 0, messageSize);
   generate_random_message(buffer, messageSize, time(NULL));
-
   sendTime = MPI_Wtime();
-
-  log_print(1, "root sending..\n");
-
   err = MPI_Send((void *)buffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD);
-
-  log_print(1, "root sent..\n");
-
   if (err != MPI_SUCCESS) {
     printf("Send error in root\n");
     return err;
   }
   memset(buffer, 0, messageSize);
-
-  log_print(1, "root receiving..\n");
-
   err = MPI_Recv((void *)buffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD,
                  MPI_STATUS_IGNORE);
-
-  log_print(1, "root received..\n");
-
   recvTime = MPI_Wtime();
   if (err != MPI_SUCCESS) {
     printf("Read error in root\n");
@@ -53,14 +40,8 @@ int pingpong_node_run(int rank, int messageSize, int verbose) {
   int err;
 
   memset(buffer, 0, messageSize);
-
-  log_print(1, "node receiving..\n");
-
   err = MPI_Recv((void *)buffer, messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD,
                  MPI_STATUS_IGNORE);
-
-  log_print(1, "node received..\n");
-
   if (err != MPI_SUCCESS) {
     log_print(verbose, "Read error in %d\n", rank);
     return err;
@@ -72,13 +53,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose) {
 
   memset(buffer, 0, messageSize);
   generate_random_message(buffer, messageSize, time(NULL) + rank);
-
-  log_print(1, "node sending..\n");
-
   err = MPI_Send((void *)buffer, messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD);
-
-  log_print(1, "node sent..\n");
-
   if (err != MPI_SUCCESS) {
     printf("Send error in %d\n", rank);
     return err;
