@@ -6,8 +6,8 @@ int ping_exchange_root_run(int size, int messageSize, int verbose) {
   char recvBuffer[messageSize];
   memset(sendBuffer, 0, messageSize);
   memset(recvBuffer, 0, messageSize);
-  int err;
   generate_random_message(sendBuffer, messageSize, time(NULL));
+  int err;
   err = MPI_Sendrecv((void *)sendBuffer, messageSize, MPI_CHAR, 1, 1,
                      (void *)recvBuffer, messageSize, MPI_CHAR, 1, 1,
                      MPI_COMM_WORLD, MPI_STATUS_IGNORE);
