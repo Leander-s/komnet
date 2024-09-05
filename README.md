@@ -1,8 +1,11 @@
-TODO:
-ping-pong program
-ping-exchange program
-test program
+build:
+    run build script
 
+run:
+    run srun --partition <partition> -N <N> -n <n> ./<any program in /build> <args>
+    to get args run ./<any program in /build> --help
+
+TODO:
 test not working with tcp
 
 Tests:
