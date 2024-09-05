@@ -8,9 +8,13 @@ int ping_exchange_root_run(int size, int messageSize, int verbose) {
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL));
   int err;
+  double sendTime, recvTime, latency;
+
+  sendTime = MPI_Wtime();
   err = MPI_Sendrecv((void *)sendBuffer, messageSize, MPI_CHAR, 1, 1,
                      (void *)recvBuffer, messageSize, MPI_CHAR, 1, 1,
                      MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+  recvTime = MPI_Wtime();
   if (err != MPI_SUCCESS) {
     char errorString[64];
     int errorStringLength;
@@ -19,8 +23,12 @@ int ping_exchange_root_run(int size, int messageSize, int verbose) {
     return err;
   }
 
+  latency = recvTime - sendTime;
+
   // Print what was read from node i.
   log_print(verbose, "Root: Read '%s' from node %d.\n", (char *)recvBuffer, 1);
+
+  printf("Half-round-trip latency was %lf ms.\n", latency/2 * 1000);
 
   return MPI_SUCCESS;
 }

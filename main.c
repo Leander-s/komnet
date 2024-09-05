@@ -101,21 +101,12 @@ int main(int argc, char **argv) {
         argv[i]);
   }
 
-  // time
-  double startTime, endTime, diff;
-  startTime = MPI_Wtime();
-
   // if root or node
   if (rank == 0) {
     err = root_functions[mode](size, messageSize, verbose);
   } else {
     err = node_functions[mode](rank, messageSize, verbose);
   }
-
-  // time
-  endTime = MPI_Wtime();
-  diff = endTime - startTime;
-  root_print(rank,"Took %lf seconds\n", diff);
 
   // Deinit mpi
   MPI_Finalize();
