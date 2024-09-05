@@ -1,6 +1,7 @@
 #include "ping-exchange.h"
 #include "ping-pong.h"
 #include "util.h"
+#include <math.h>
 
 #define PING_PONG 0
 #define PING_EXCHANGE 1
@@ -44,7 +45,7 @@ int main(int argc, char **argv) {
             messageSize);
         continue;
       }
-      messageSize = string_to_int(argv[i + 1]);
+      messageSize = pow(2, string_to_int(argv[i + 1]));
       root_print(rank, "Using message size %d.\n", messageSize);
       i++;
       continue;

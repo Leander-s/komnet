@@ -43,7 +43,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose) {
   log_print(verbose, "Node %d: Received from root : '%s'\n", rank, (char *)buffer);
 
   memset(buffer, 0, messageSize);
-  generate_random_message(buffer, messageSize, time(NULL) * rank);
+  generate_random_message(buffer, messageSize, time(NULL) + rank);
   err = MPI_Send((void *)buffer, messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD);
   if (err != MPI_SUCCESS) {
     printf("Send error in %d\n", rank);
