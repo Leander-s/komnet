@@ -1,3 +1,10 @@
+TODO:
+ping-pong program
+ping-exchange program
+test program
+
+test not working with tcp
+
 Tests:
 half-round-trip:
     ping-pong/ping-exchange, messageSize 2⁰ -> 2²⁰, intranode/internode
