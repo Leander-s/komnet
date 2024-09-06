@@ -14,13 +14,19 @@ run:
     to get args run ./<any program in /build> --help
 
 TODO:
+maybe run tests program 5 times instead of doing for loop in test
+Powerpoint
+PDF
 Why spikes at beginning sometimes
 9.1 run scripts
+
+Questions:
+"Führen sie ihre Messungen fünf mal durch" - 5 MPI_Init-MPI_Finalize?
 
 Tests:
 half-round-trip:
     diagram
 
 cpunodebind stuff:
-    different? -> no -> how? 
+    how does this work???
     diagram
