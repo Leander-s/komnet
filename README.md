@@ -15,9 +15,6 @@ run:
 
 TODO:
 Why spikes at beginning sometimes
-need to use srun with -mca btl tcp,self
-update run scripts
-
 9.1 run scripts
 
 Tests:
