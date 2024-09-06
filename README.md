@@ -2,23 +2,25 @@ modules:
     mpi/OpenMPI
 
 build:
-    run build script
+    run build_t9.sh script
 
 run:
+  tests:
     run scripts
+
     run srun --partition <partition> -N <N> -n <n> ./<any program in /build> <args>
     to get args run ./<any program in /build> --help
 
 TODO:
-test not working with tcp
+need to use srun with -mca btl tcp,self
+update run scripts
+
+9.1 run scripts
 
 Tests:
 half-round-trip:
-    ping-pong/ping-exchange, messageSize 2⁰ -> 2²⁰, intranode/internode
-    5X
     diagram
 
 cpunodebind stuff:
-    half-round-trip using numactl --cpunodebind=(0|1)
-    different? -> why
+    different? -> no -> how? 
     diagram
