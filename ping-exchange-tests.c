@@ -80,7 +80,6 @@ int main(int argc, char **argv) {
     root_print(rank, "Results for 2^%d:\n", i);
     for (int j = 1; j <= 5; j++) {
       root_print(rank, "Result number %d: ", j);
-      sleep(1);
       run_test(pow(2, i), rank, size);
     }
   }

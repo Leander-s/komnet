@@ -1,7 +1,11 @@
+modules:
+    mpi/OpenMPI
+
 build:
     run build script
 
 run:
+    run scripts
     run srun --partition <partition> -N <N> -n <n> ./<any program in /build> <args>
     to get args run ./<any program in /build> --help
 
