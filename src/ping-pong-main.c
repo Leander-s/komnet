@@ -58,8 +58,8 @@ int main(int argc, char **argv) {
     root_print(
         rank,
         "Argument '%s' is not a valid argument.\nSkipping this "
-        "argument.\nValid arguments are:\n-m <mode> : Specifies run mode. "
-        "<mode> can be 'pp' or 'pe'\n-s <size> : Specifies message size. "
+        "argument.\nValid arguments are:\n"
+        "-s <size> : Specifies message size. "
         "<size> is an integer.\n-v : Verbose -> prints messages.\n",
         argv[i]);
   }

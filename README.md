@@ -2,7 +2,7 @@ modules:
     mpi/OpenMPI
 
 build:
-    run build script
+    run build_t9.sh script
 
 run:
     tests:
@@ -15,12 +15,15 @@ run:
 
 TODO:
 Why spikes at beginning sometimes
+need to use srun with -mca btl tcp,self
+update run scripts
+
+9.1 run scripts
 
 Tests:
 half-round-trip:
     diagram
 
 cpunodebind stuff:
-    half-round-trip using numactl --cpunodebind=(0|1)
-    different? -> why
+    different? -> no -> how? 
     diagram
