@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 
   for (int i = 0; i <= 20; i++) {
     root_print(rank, "Results for 2^%d:\n", i);
-    for (int j = 0; j < 5; j++) {
+    for (int j = 1; j <= 5; j++) {
       root_print(rank, "Result number %d: ", j);
       err = run_test(pow(2, i), rank, size);
       if (err != MPI_SUCCESS) {
