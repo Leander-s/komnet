@@ -5,17 +5,19 @@ build:
     run build script
 
 run:
-    run scripts
+    tests:
+        run scripts
+        outputs in ./results
+        potential errors in ./errors 
+
     run srun --partition <partition> -N <N> -n <n> ./<any program in /build> <args>
     to get args run ./<any program in /build> --help
 
 TODO:
-test not working with tcp
+Why spikes at beginning sometimes
 
 Tests:
 half-round-trip:
-    ping-pong/ping-exchange, messageSize 2⁰ -> 2²⁰, intranode/internode
-    5X
     diagram
 
 cpunodebind stuff:
