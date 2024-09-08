@@ -28,5 +28,6 @@ half-round-trip:
     diagram
 
 cpunodebind stuff:
-    how does this work???
+    binds process to numanode in physical node process was distributed to
+        why is numa node 7 slower than numa node 0???
     diagram
