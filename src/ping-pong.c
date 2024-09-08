@@ -31,7 +31,7 @@ int pingpong_root_run(int size, int messageSize, int verbose) {
   // Print what was read from node i.
   log_print(verbose, "Root: Received from other node : '%s'\n",  (char *)buffer);
 
-  printf("Half-round-trip latency : %lf ms.\n", latency / 2 * 1000);
+  printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
   return MPI_SUCCESS;
 }
 
