@@ -10,7 +10,7 @@ echo "Running on ${part}"
 
 rm ./results_*/*
 
-export OMPI_MCA_btl=ofi,self
+export OMPI_MCA_btl=^openib,ofi
 # infiniband
 srun --partition $part -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/ib_pe_inter.out &
 srun --partition $part -N 1 -n 2 ./build/ping_exchange_tests > ./results_infiniband/ib_pe_intra.out &
