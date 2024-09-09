@@ -6,9 +6,9 @@ else
 	part=$1
 fi
 
-rm ./results_92/*
-rm ./results_93/*
-rm ./results_infiniband/*
+echo "Running on ${part}"
+
+rm ./results_*/*
 
 export OMPI_MCA_btl=ofi,self
 # infiniband
@@ -18,6 +18,8 @@ srun --partition $part -N 2 -n 2 ./build/pingpong_tests > ./results_infiniband/p
 srun --partition $part -N 1 -n 2 ./build/pingpong_tests > ./results_infiniband/pp_intra.out &
 
 export OMPI_MCA_btl=tcp,self
+export OMPI_MCA_btl_sndbuf=2000000
+export OMPI_MCA_btl_rcvbuf=2000000
 
 # task 9.2
 srun --partition $part -N 2 -n 2 ./build/ping_exchange_tests > ./results_92/pe_inter.out &
