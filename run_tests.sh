@@ -12,10 +12,10 @@ rm ./results_*/*
 
 export OMPI_MCA_btl=ofi,self
 # infiniband
-srun --partition $part -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_inter.out &
-srun --partition $part -N 1 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_intra.out &
-srun --partition $part -N 2 -n 2 ./build/pingpong_tests > ./results_infiniband/pp_inter.out &
-srun --partition $part -N 1 -n 2 ./build/pingpong_tests > ./results_infiniband/pp_intra.out &
+srun --partition $part -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/ib_pe_inter.out &
+srun --partition $part -N 1 -n 2 ./build/ping_exchange_tests > ./results_infiniband/ib_pe_intra.out &
+srun --partition $part -N 2 -n 2 ./build/pingpong_tests > ./results_infiniband/ib_pp_inter.out &
+srun --partition $part -N 1 -n 2 ./build/pingpong_tests > ./results_infiniband/ib_pp_intra.out &
 
 export OMPI_MCA_btl=tcp,self
 export OMPI_MCA_btl_sndbuf=2000000
