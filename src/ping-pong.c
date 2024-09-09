@@ -1,9 +1,9 @@
 #include "ping-pong.h"
 #include <mpi.h>
 
-int pingpong_root_run(int size, int messageSize, int verbose) {
+int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
   char buffer[messageSize];
-  int err, cycles = 100;
+  int err;
   double latencySum = 0;
 
   // Preparing buffer for send
@@ -41,10 +41,10 @@ int pingpong_root_run(int size, int messageSize, int verbose) {
   return MPI_SUCCESS;
 }
 
-int pingpong_node_run(int rank, int messageSize, int verbose) {
+int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
   char recvBuffer[messageSize];
   char sendBuffer[messageSize];
-  int err, cycles = 100;
+  int err;
 
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);

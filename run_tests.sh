@@ -6,6 +6,10 @@ else
 	part=$1
 fi
 
+rm ./results_92/*
+rm ./results_93/*
+rm ./results_infiniband/*
+
 export OMPI_MCA_btl=ofi,self
 # infiniband
 srun --partition $part -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_inter.out &

@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
       if (i + 1 >= argc) {
         root_print(
             rank,
-            "Specify cycles using '-c <cycles>'. Using default cycles:%d.\n",
+            "Specify cycles using '-c <cycles>'. Using default cycles:%d.\n", cycles
             );
         continue;
       }

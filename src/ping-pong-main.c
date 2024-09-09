@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
 
   int messageSize = 16;
   int verbose = 0;
+  int cycles = 5;
 
   // Get rank and size for this process
   int rank, size, err;
@@ -39,6 +40,21 @@ int main(int argc, char **argv) {
       continue;
     }
 
+    // Checking -c arg for cycles
+    if (strcmp(argv[i], "-c") == 0) {
+      if (i + 1 >= argc) {
+        root_print(
+            rank,
+            "Specify cycles using '-c <cycles>'. Using default cycles:%d.\n",
+            cycles);
+        continue;
+      }
+      cycles = string_to_int(argv[i + 1]);
+      root_print(rank, "Using cycles %d.\n", cycles);
+      i++;
+      continue;
+    }
+
     if (strcmp(argv[i], "-v") == 0) {
       verbose = 1;
       continue;
@@ -49,7 +65,7 @@ int main(int argc, char **argv) {
           rank,
           "Valid arguments are:\n-m <mode> : Specifies run mode. "
           "<mode> can be 'pp' or 'pe'\n-s <size> : Specifies message size. "
-          "<size> is an integer.\n-v : Verbose -> prints messages.\n");
+          "<size> is an integer.\n-v : Verbose -> prints messages.\n-c <cycles> : Specifies how often the message is sent and received.\n");
       MPI_Finalize();
       return 0;
     }
@@ -60,15 +76,15 @@ int main(int argc, char **argv) {
         "Argument '%s' is not a valid argument.\nSkipping this "
         "argument.\nValid arguments are:\n"
         "-s <size> : Specifies message size. "
-        "<size> is an integer.\n-v : Verbose -> prints messages.\n",
+        "<size> is an integer.\n-v : Verbose -> prints messages.\n-c <cycles> : Specifies how often the message is sent and received.\n",
         argv[i]);
   }
 
   // if root or node
   if (rank == 0) {
-    err = pingpong_root_run(size, messageSize, verbose);
+    err = pingpong_root_run(size, messageSize, verbose, cycles);
   } else {
-    err = pingpong_node_run(rank, messageSize, verbose);
+    err = pingpong_node_run(rank, messageSize, verbose, cycles);
   }
 
   // Deinit mpi

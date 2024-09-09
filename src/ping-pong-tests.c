@@ -8,9 +8,9 @@ int run_test(int messageSize, int rank, int size) {
   int err;
   // if root or node
   if (rank == 0) {
-    err = pingpong_root_run(size, messageSize, 0);
+    err = pingpong_root_run(size, messageSize, 0, 100);
   } else {
-    err = pingpong_node_run(rank, messageSize, 0);
+    err = pingpong_node_run(rank, messageSize, 0, 100);
   }
   return err;
 }
@@ -18,9 +18,6 @@ int run_test(int messageSize, int rank, int size) {
 int main(int argc, char **argv) {
   // Init mpi
   MPI_Init(&argc, &argv);
-
-  int messageSize = 16;
-  int verbose = 0;
 
   // Get rank and size for this process
   int rank, size, err;
