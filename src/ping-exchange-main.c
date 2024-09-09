@@ -44,17 +44,20 @@ int main(int argc, char **argv) {
       verbose = 1;
       continue;
     }
-    
-    if(strcmp(argv[i], "-c") == 0){
+
+    if (strcmp(argv[i], "-c") == 0) {
       if (i + 1 >= argc) {
+        root_print(rank, "given : %s\n", argv[i]);
+        root_print(rank, "given : %d\n", i);
+        root_print(rank, "argc : %d\n", argc);
         root_print(
             rank,
-            "Specify cycles using '-c <cycles>'. Using default cycles:%d.\n", cycles
-            );
+            "Specify cycles using '-c <cycles>'. Using default cycles: %d.\n",
+            cycles);
         continue;
       }
-	    cycles = string_to_int(argv[i+1]);
-	    i++;
+      cycles = string_to_int(argv[i + 1]);
+      i++;
     }
 
     if (strcmp(argv[i], "--help") == 0) {
@@ -62,7 +65,8 @@ int main(int argc, char **argv) {
           rank,
           "Valid arguments are:\n-m <mode> : Specifies run mode. "
           "<mode> can be 'pp' or 'pe'\n-s <size> : Specifies message size. "
-          "<size> is an integer.\n-v : Verbose -> prints messages.\n-c <cycles> : Specifies how often the message is sent and received.\n");
+          "<size> is an integer.\n-v : Verbose -> prints messages.\n-c "
+          "<cycles> : Specifies how often the message is sent and received.\n");
       MPI_Finalize();
       return 0;
     }
@@ -73,7 +77,8 @@ int main(int argc, char **argv) {
         "Argument '%s' is not a valid argument.\nSkipping this "
         "argument.\nValid arguments are:\n"
         "-s <size> : Specifies message size. "
-        "<size> is an integer.\n-v : Verbose -> prints messages.\n-c <cycles> : Specifies how often the message is sent and received.\n",
+        "<size> is an integer.\n-v : Verbose -> prints messages.\n-c <cycles> "
+        ": Specifies how often the message is sent and received.\n",
         argv[i]);
   }
 
