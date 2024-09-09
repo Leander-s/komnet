@@ -6,7 +6,6 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   int err;
   char sendBuffer[messageSize];
   char recvBuffer[messageSize];
-  memset(sendBuffer, 0, messageSize);
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL));
 
@@ -44,7 +43,6 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
   int err;
   char recvBuffer[messageSize];
   char sendBuffer[messageSize];
-  memset(sendBuffer, 0, messageSize);
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
   for (int i = 0; i < cycles; i++) {

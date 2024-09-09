@@ -2,25 +2,25 @@
 #include <mpi.h>
 
 int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
-  char buffer[messageSize];
+  char recvBuffer[messageSize];
+  char sendBuffer[messageSize];
   int err;
   double latencySum = 0;
 
   // Preparing buffer for send
-  memset(buffer, 0, messageSize);
-  generate_random_message(buffer, messageSize, time(NULL));
+  memset(recvBuffer, 0, messageSize);
+  generate_random_message(sendBuffer, messageSize, time(NULL));
 
   for (int i = 0; i < cycles; i++) {
     // use sentTime/recvTime array for multiple nodes
     double sendTime, recvTime, latency;
     sendTime = MPI_Wtime();
-    err = MPI_Send((void *)buffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD);
+    err = MPI_Send((void *)sendBuffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD);
     if (err != MPI_SUCCESS) {
       printf("Send error in root\n");
       return err;
     }
-    memset(buffer, 0, messageSize);
-    err = MPI_Recv((void *)buffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD,
+    err = MPI_Recv((void *)recvBuffer, messageSize, MPI_CHAR, 1, 1, MPI_COMM_WORLD,
                    MPI_STATUS_IGNORE);
     recvTime = MPI_Wtime();
     if (err != MPI_SUCCESS) {
@@ -33,7 +33,7 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
 
     // Print what was read from node i.
     log_print(verbose, "Root: Received from other node : '%s'\n",
-              (char *)buffer);
+              (char *)recvBuffer);
   }
 
   double latency = latencySum / cycles;
