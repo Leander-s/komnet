@@ -10,11 +10,16 @@ int string_to_int(char *str) {
 
 void generate_random_message(char *buffer, int bufferSize, int seed) {
   // init rng
+  /* random message
   srandom(seed);
 
   for (int i = 0; i < bufferSize; i++) {
     buffer[i] = random() % (91 - 33) + 33;
   }
+  */
+
+  // Just return a bunch of a (maybe less interference)
+  memset(buffer, 'a', bufferSize);
 }
 
 int root_print(int rank, const char *format, ...){

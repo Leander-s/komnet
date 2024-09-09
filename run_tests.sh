@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export OMPI_MCA_btl=^openib,ofi
+export OMPI_MCA_btl=ofi,self
 # infiniband
 srun --partition largemem -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_inter.out &
 srun --partition largemem -N 1 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_intra.out &
