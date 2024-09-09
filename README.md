@@ -6,11 +6,12 @@ build:
 
 run:
     tests:
-        run scripts
-        outputs in ./results
-        potential errors in ./errors 
+        run ./run_tests.sh <partition> (largemem by default)
+        9.2 outputs in ./results_92
+        9.3 outputs in ./results_93
 
 TODO:
+run_tests.sh shouldnt have to be killed.
 maybe run tests program 5 times instead of doing for loop in test
 Powerpoint
 PDF
@@ -19,12 +20,3 @@ Why spike at 2^17 message size?
 
 Questions:
 "Führen sie ihre Messungen fünf mal durch" - 5 MPI_Init-MPI_Finalize?
-
-Tests:
-half-round-trip:
-    diagram
-
-cpunodebind stuff:
-    binds process to numanode in physical node process was distributed to
-        why is numa node 7 slower than numa node 0???
-    diagram

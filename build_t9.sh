@@ -1,3 +1,10 @@
+if [ ! -d "build" ]; then
+    mkdir "build"
+    echo "build created"
+fi
+
+module load mpi/OpenMPI
+
 # all
 mpicc src/main.c src/util.c src/ping-pong.c src/ping-exchange.c src/util.h src/ping-pong.h src/ping-exchange.h -o build/bundle -lm
 

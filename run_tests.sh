@@ -40,3 +40,5 @@ srun --partition $part -N 2 -n 2 numactl --cpunodebind=7 ./build/pingpong_tests 
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=7 ./build/pingpong_tests > ./results_93/pp_intra_7.out &
 srun --partition $part -N 2 -n 2 numactl --cpunodebind=1 ./build/pingpong_tests > ./results_93/pp_inter_1.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=1 ./build/pingpong_tests > ./results_93/pp_intra_1.out &
+
+exit 0
