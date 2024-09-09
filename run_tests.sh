@@ -1,5 +1,12 @@
 #!/bin/bash
 
+export OMPI_MCA_btl=^openib,ofi
+# infiniband
+srun --partition largemem -N 2 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_inter.out &
+srun --partition largemem -N 1 -n 2 ./build/ping_exchange_tests > ./results_infiniband/pe_intra.out &
+srun --partition largemem -N 2 -n 2 ./build/pingpong_tests > ./results_infiniband/pp_inter.out &
+srun --partition largemem -N 1 -n 2 ./build/pingpong_tests > ./results_infiniband/pp_intra.out &
+
 export OMPI_MCA_btl=tcp,self
 
 # task 9.2
