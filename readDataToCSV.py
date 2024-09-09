@@ -3,7 +3,7 @@ import re
 import os
 
 # Locations of measurements
-directory_names = ['results_92', 'results_93']
+directory_names = ['results_92', 'results_93', 'results_infiniband']
 
 def write_csv_datei(filename):
     # Open and read the file
