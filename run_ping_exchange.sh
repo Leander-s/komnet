@@ -3,7 +3,7 @@
 SIZE=20
 CYCLES=5
 
-while getopts ":s:c" flag
+while getopts ":s:c:" flag
 do
 	case "${flag}" in
 		s) SIZE=$OPTARG;;

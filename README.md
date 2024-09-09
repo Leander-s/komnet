@@ -11,7 +11,7 @@ run:
         9.3 outputs in ./results_93
 
 TODO:
-run_tests.sh shouldnt have to be killed.
+args weird
 maybe run tests program 5 times instead of doing for loop in test
 Powerpoint
 PDF

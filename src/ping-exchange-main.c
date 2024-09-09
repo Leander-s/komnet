@@ -47,9 +47,6 @@ int main(int argc, char **argv) {
 
     if (strcmp(argv[i], "-c") == 0) {
       if (i + 1 >= argc) {
-        root_print(rank, "given : %s\n", argv[i]);
-        root_print(rank, "given : %d\n", i);
-        root_print(rank, "argc : %d\n", argc);
         root_print(
             rank,
             "Specify cycles using '-c <cycles>'. Using default cycles: %d.\n",
@@ -57,6 +54,7 @@ int main(int argc, char **argv) {
         continue;
       }
       cycles = string_to_int(argv[i + 1]);
+      root_print(rank, "Using %d cycles.\n", cycles);
       i++;
     }
 
