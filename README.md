@@ -2,17 +2,17 @@ Scripts will only run with slurm and OpenMPI. build.sh loads mpi/OpenMPI module
 automatically.
 
 modules:
-    mpi/OpenMPI
+mpi/OpenMPI
 
 build:
-    run build.sh script
+run build.sh script
 
 run:
     tests:
-        ./run_tests.sh <partition> (largemem by default)
 
-        9.2 outputs in ./results_92
-        9.3 outputs in ./results_93
+        ./run_tests.sh <partition> (largemem by default
+9.2 outputs in ./results_92
+9.3 outputs in ./results_93
 
 TODO:
 maybe run tests program 5 times instead of doing for loop in test
