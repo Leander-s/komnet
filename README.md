@@ -35,6 +35,7 @@ ping-exchange:<br/>
 
 ***
 
+<!--
 TODO:
 maybe run tests program 5 times instead of doing for loop in test
 Powerpoint
@@ -44,3 +45,4 @@ Why spike at 2<sup>17</sup> message size?
 
 Questions:
 "Führen sie ihre Messungen fünf mal durch" - 5 MPI_Init-MPI_Finalize?
+-->
