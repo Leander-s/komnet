@@ -1,11 +1,17 @@
 Scripts will only run with slurm and OpenMPI. build.sh loads mpi/OpenMPI module
 automatically.
 
+***
 modules:<br/>
 mpi/OpenMPI
 
+***
+
 build:<br/>
-run build.sh script
+    
+    ./build.sh
+
+***
 
 run:<br/>
     tests:<br/>
@@ -22,6 +28,8 @@ ping-pong:<br/>
 ping-exchange:<br/>
 
         ./run_ping_exchange.sh -s <size> -c <cycles><br/>
+
+***
 
 TODO:
 maybe run tests program 5 times instead of doing for loop in test
