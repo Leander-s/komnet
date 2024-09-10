@@ -1,7 +1,6 @@
-#include "ping-exchange.h"
-#include "ping-pong.h"
+#include "ping-exchange/ping-exchange.h"
+#include "ping-pong/ping-pong.h"
 #include "util.h"
-#include <math.h>
 
 #define PING_PONG 0
 #define PING_EXCHANGE 1

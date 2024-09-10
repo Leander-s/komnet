@@ -6,12 +6,12 @@ fi
 module load mpi/OpenMPI
 
 # all
-mpicc src/main.c src/util.c src/ping-pong.c src/ping-exchange.c src/util.h src/ping-pong.h src/ping-exchange.h -o build/bundle -lm
+mpicc code/main.c code/util.c code/ping-pong/ping-pong.c code/ping-exchange/ping-exchange.c code/util.h code/ping-pong/ping-pong.h code/ping-exchange/ping-exchange.h -o build/bundle -lm
 
 # each
-mpicc src/ping-pong-main.c src/util.c src/ping-pong.c src/util.h src/ping-pong.h -o build/pingpong -lm
-mpicc src/ping-exchange-main.c src/util.c src/ping-exchange.c src/util.h src/ping-exchange.h -o build/ping_exchange -lm
+mpicc code/ping-pong/main.c code/util.c code/ping-pong/ping-pong.c code/util.h code/ping-pong/ping-pong.h -o build/pingpong -lm
+mpicc code/ping-exchange/main.c code/util.c code/ping-exchange/ping-exchange.c code/util.h code/ping-exchange/ping-exchange.h -o build/ping_exchange -lm
 
 # tests
-mpicc src/ping-pong-tests.c src/util.c src/ping-pong.c src/util.h src/ping-pong.h -o build/pingpong_tests -lm
-mpicc src/ping-exchange-tests.c src/util.c src/ping-exchange.c src/util.h src/ping-exchange.h -o build/ping_exchange_tests -lm
+mpicc code/ping-pong/tests.c code/util.c code/ping-pong/ping-pong.c code/util.h code/ping-pong/ping-pong.h -o build/pingpong_tests -lm
+mpicc code/ping-exchange/tests.c code/util.c code/ping-exchange/ping-exchange.c code/util.h code/ping-exchange/ping-exchange.h -o build/ping_exchange_tests -lm

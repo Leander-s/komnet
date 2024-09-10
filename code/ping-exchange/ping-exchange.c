@@ -1,5 +1,4 @@
 #include "ping-exchange.h"
-#include <mpi.h>
 
 int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   double latencySum = 0;

@@ -1,6 +1,4 @@
 #include "ping-exchange.h"
-#include "util.h"
-#include <math.h>
 
 int main(int argc, char **argv) {
   // Init mpi

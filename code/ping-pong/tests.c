@@ -1,15 +1,13 @@
-#include "ping-exchange.h"
-#include "util.h"
-#include <math.h>
+#include "ping-pong.h"
 #include <unistd.h>
 
 int run_test(int messageSize, int rank, int size) {
   int err;
   // if root or node
   if (rank == 0) {
-    err = ping_exchange_root_run(size, messageSize, 0, 100);
+    err = pingpong_root_run(size, messageSize, 0, 100);
   } else {
-    err = ping_exchange_node_run(rank, messageSize, 0, 100);
+    err = pingpong_node_run(rank, messageSize, 0, 100);
   }
   return err;
 }
@@ -35,7 +33,10 @@ int main(int argc, char **argv) {
     root_print(rank, "Results for 2^%d:\n", i);
     for (int j = 1; j <= 5; j++) {
       root_print(rank, "Result number %d: ", j);
-      run_test(pow(2, i), rank, size);
+      err = run_test(pow(2, i), rank, size);
+      if (err != MPI_SUCCESS) {
+        printf("Test returned error in %d\n", rank);
+      }
     }
   }
 
