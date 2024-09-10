@@ -2,24 +2,29 @@ Scripts will only run with slurm and OpenMPI. build.sh loads mpi/OpenMPI module
 automatically.
 
 ***
-modules:<br/>
+**Modules**<br/>
 mpi/OpenMPI
 
 ***
 
-build:<br/>
+**Build**<br/>
     
     ./build.sh
 
 ***
 
-run:<br/>
-    tests:<br/>
+**Run**<br/>
+
+***
+
+tests:<br/>
 
         ./run_tests.sh <partition><br/> 
 (largemem by default)<br/>
 9.2 outputs in ./results_92<br/>
 9.3 outputs in ./results_93<br/>
+
+***
 
 Parameters are optional for Ping-Pong and Ping-Exchange<br/>
 ping-pong:<br/>
