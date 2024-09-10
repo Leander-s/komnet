@@ -1,6 +1,7 @@
-#include "../util.h"
+#include "arg_util.h"
 
-int handle_args(int argc, char **argv, int rank, int *messageSize, int *verbose, int *cycles){
+int handle_args(int argc, char **argv, int rank, int *messageSize, int *verbose,
+                int *cycles) {
   for (int i = 1; i < argc; i++) {
     // Checking -s arg for size
     if (strcmp(argv[i], "-s") == 0) {
@@ -56,6 +57,5 @@ int handle_args(int argc, char **argv, int rank, int *messageSize, int *verbose,
         ": Specifies how often the message is sent and received.\n",
         argv[i]);
   }
-    return 0;
+  return 0;
 }
-

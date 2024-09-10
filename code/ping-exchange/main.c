@@ -1,5 +1,5 @@
 #include "ping-exchange.h"
-#include "arg_util.c"
+#include "arg_util.h"
 
 int main(int argc, char **argv) {
   // Init mpi
