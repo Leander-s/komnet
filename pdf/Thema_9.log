@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  10 SEP 2024 10:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  10 SEP 2024 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,68 +6,303 @@ entering extended mode
 (Thema_9.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
-(/home/leander/.miktex/texmfs/install/tex/latex/base/article.cls
-Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
-(/home/leander/.miktex/texmfs/install/tex/latex/base/size12.clo
-File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+(/home/leander/.miktex/texmfs/install/tex/latex/base/report.cls
+Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
+(/home/leander/.miktex/texmfs/install/tex/latex/base/size10.clo
+File: size10.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count194
-\c@section=\count195
-\c@subsection=\count196
-\c@subsubsection=\count197
-\c@paragraph=\count198
-\c@subparagraph=\count199
-\c@figure=\count266
-\c@table=\count267
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
 )
+(/home/leander/.miktex/texmfs/install/tex/latex/listings/listings.sty
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\lst@mode=\count269
+\lst@gtempboxa=\box52
+\lst@token=\toks18
+\lst@length=\count270
+\lst@currlwidth=\dimen142
+\lst@column=\count271
+\lst@pos=\count272
+\lst@lostspace=\dimen143
+\lst@width=\dimen144
+\lst@newlines=\count273
+\lst@lineno=\count274
+\lst@maxwidth=\dimen145
+
+(/home/leander/.miktex/texmfs/install/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+\c@lstnumber=\count275
+\lst@skipnumbers=\count276
+\lst@framebox=\box53
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/05/25 1.10b listings configuration
+))
+Package: listings 2024/05/25 1.10b (Carsten Heinz)
+
+(/home/leander/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/home/leander/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/home/leander/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
+\Gm@bindingoffset=\dimen146
+\Gm@wd@mp=\dimen147
+\Gm@odd@mp=\dimen148
+\Gm@even@mp=\dimen149
+\Gm@layoutwidth=\dimen150
+\Gm@layoutheight=\dimen151
+\Gm@layouthoffset=\dimen152
+\Gm@layoutvoffset=\dimen153
+\Gm@dimlist=\toks19
+
+(/home/leander/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/home/leander/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/home/leander/.miktex/texmfs/install/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen156
+\captionmargin=\dimen157
+\caption@leftmargin=\dimen158
+\caption@rightmargin=\dimen159
+\caption@width=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count280
+\c@continuedfloat=\count281
+Package caption Info: listings package is loaded.
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count282
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count283
+)
 (/home/leander/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count268
-\l__pdf_internal_box=\box52
+\l__color_backend_stack_int=\count284
+\l__pdf_internal_box=\box54
 ) (Thema_9.aux)
 \openout1 = `Thema_9.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+\c@lstlisting=\count285
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/home/leander/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count286
+\scratchdimen=\dimen164
+\scratchbox=\box55
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen165
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks21
+)
+(/home/leander/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/home/leander/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
 
 
 [1
 
-{/home/leander/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}] (Thema_9.aux)
+{/home/leander/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}]
+
+[1]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
+9.
+ (/home/leander/.miktex/texmfs/install/tex/latex/base/omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
+
+
+[2]
+
+[3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 146.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 146.
+<images/Intra-Inter.png, id=22, 1275.76625pt x 697.60625pt>
+File: images/Intra-Inter.png Graphic file (type png)
+<use images/Intra-Inter.png>
+Package pdftex.def Info: images/Intra-Inter.png  used on input line 148.
+(pdftex.def)             Requested size: 483.69687pt x 264.48637pt.
+
+
+[4 <./images/Intra-Inter.png>]
+<images/cpunodebind0.png, id=29, 788.9475pt x 382.42876pt>
+File: images/cpunodebind0.png Graphic file (type png)
+<use images/cpunodebind0.png>
+Package pdftex.def Info: images/cpunodebind0.png  used on input line 171.
+(pdftex.def)             Requested size: 241.84843pt x 117.23288pt.
+<images/cpunodebind1.png, id=30, 783.92876pt x 379.4175pt>
+File: images/cpunodebind1.png Graphic file (type png)
+<use images/cpunodebind1.png>
+Package pdftex.def Info: images/cpunodebind1.png  used on input line 175.
+(pdftex.def)             Requested size: 241.84843pt x 117.05084pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 169--177
+[][] [] 
+ []
+
+<images/cpunodebind2.png, id=31, 785.93625pt x 381.425pt>
+File: images/cpunodebind2.png Graphic file (type png)
+<use images/cpunodebind2.png>
+Package pdftex.def Info: images/cpunodebind2.png  used on input line 181.
+(pdftex.def)             Requested size: 241.84843pt x 117.37332pt.
+<images/cpunodebind3.png, id=32, 784.9325pt x 381.425pt>
+File: images/cpunodebind3.png Graphic file (type png)
+<use images/cpunodebind3.png>
+Package pdftex.def Info: images/cpunodebind3.png  used on input line 185.
+(pdftex.def)             Requested size: 241.84843pt x 117.51883pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 179--187
+[][] [] 
+ []
+
+
+
+[5 <./images/cpunodebind0.png> <./images/cpunodebind1.png> <./images/cpunodebin
+d2.png> <./images/cpunodebind3.png>] (Thema_9.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 434 strings out of 473900
- 8373 string characters out of 5730314
- 1925957 words of memory out of 5000000
- 23386 multiletter control sequences out of 15000+600000
- 558973 words of font info for 39 fonts, out of 8000000 for 9000
+ 5056 strings out of 473900
+ 82357 string characters out of 5730314
+ 1956957 words of memory out of 5000000
+ 27928 multiletter control sequences out of 15000+600000
+ 562827 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,5n,50p,142b,111s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.p
-fb>
-Output written on Thema_9.pdf (1 page, 23079 bytes).
+ 57i,9n,65p,246b,1241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/leander/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm10
+00.pk></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+r17.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+tt10.pfb>
+Output written on Thema_9.pdf (6 pages, 237684 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
