@@ -33,8 +33,8 @@ ping-exchange:<br/>
 
         ./run_ping_exchange.sh -s <size> -c <cycles>
 
-***
 
+<!-- This is commented --> 
 <!--
 TODO:
 maybe run tests program 5 times instead of doing for loop in test
