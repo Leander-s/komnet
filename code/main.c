@@ -1,8 +1,7 @@
+#include "bundle_args.h"
 #include "ping-exchange/ping-exchange.h"
 #include "ping-pong/ping-pong.h"
 #include "util.h"
-#include "bundle_args.h"
-
 
 int main(int argc, char **argv) {
   // Init mpi
@@ -34,9 +33,9 @@ int main(int argc, char **argv) {
   }
 
   // Handling arguments
-  if(handle_args(argc, argv, rank, &messageSize, &mode, &verbose, &cycles)){
-      // returning if arg was --help
-      return 0;
+  if (handle_args(argc, argv, rank, &messageSize, &mode, &verbose, &cycles)) {
+    // returning if arg was --help
+    return 0;
   }
 
   // if root or node
