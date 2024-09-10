@@ -1,27 +1,7 @@
 #include "arg_util.h"
 
-int main(int argc, char **argv) {
-  // Init mpi
-  MPI_Init(&argc, &argv);
-
-  int messageSize = 16;
-  int verbose = 0;
-  int cycles = 5;
-
-  // Get rank and size for this process
-  int rank, size, err;
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  MPI_Comm_size(MPI_COMM_WORLD, &size);
-
-  // Checking the -mca components
-  char *btl_value = getenv("OMPI_MCA_btl");
-  if (btl_value != NULL) {
-    root_print(rank, "OMPI_MCA_btl is set to: %s\n", btl_value);
-  } else {
-    root_print(rank, "OMPI_MCA_btl is not set\n");
-  }
-
-  // Handling arguments
+int handle_args(int argc, char **argv, int rank, int *messageSize, int *verbose,
+                int *cycles) {
   for (int i = 1; i < argc; i++) {
     // Checking -s arg for size
     if (strcmp(argv[i], "-s") == 0) {
@@ -29,17 +9,17 @@ int main(int argc, char **argv) {
         root_print(
             rank,
             "Specify message size using '-s <size>'. Using default size:%d.\n",
-            messageSize);
+            *messageSize);
         continue;
       }
-      messageSize = pow(2, string_to_int(argv[i + 1]));
-      root_print(rank, "Using message size %d.\n", messageSize);
+      *messageSize = pow(2, string_to_int(argv[i + 1]));
+      root_print(rank, "Using message size %d.\n", *messageSize);
       i++;
       continue;
     }
 
     if (strcmp(argv[i], "-v") == 0) {
-      verbose = 1;
+      *verbose = 1;
       continue;
     }
 
@@ -48,11 +28,11 @@ int main(int argc, char **argv) {
         root_print(
             rank,
             "Specify cycles using '-c <cycles>'. Using default cycles: %d.\n",
-            cycles);
+            *cycles);
         continue;
       }
-      cycles = string_to_int(argv[i + 1]);
-      root_print(rank, "Using %d cycles.\n", cycles);
+      *cycles = string_to_int(argv[i + 1]);
+      root_print(rank, "Using %d cycles.\n", *cycles);
       i++;
     }
 
@@ -64,7 +44,7 @@ int main(int argc, char **argv) {
           "<size> is an integer.\n-v : Verbose -> prints messages.\n-c "
           "<cycles> : Specifies how often the message is sent and received.\n");
       MPI_Finalize();
-      return 0;
+      return 1;
     }
 
     // Arg not valid, skip
@@ -77,15 +57,5 @@ int main(int argc, char **argv) {
         ": Specifies how often the message is sent and received.\n",
         argv[i]);
   }
-
-  // if root or node
-  if (rank == 0) {
-    err = ping_exchange_root_run(size, messageSize, verbose, cycles);
-  } else {
-    err = ping_exchange_node_run(rank, messageSize, verbose, cycles);
-  }
-
-  // Deinit mpi
-  MPI_Finalize();
   return 0;
 }

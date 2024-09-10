@@ -1,9 +1,7 @@
 #include "ping-exchange/ping-exchange.h"
 #include "ping-pong/ping-pong.h"
 #include "util.h"
-
-#define PING_PONG 0
-#define PING_EXCHANGE 1
+#include "bundle_args.h"
 
 int main(int argc, char **argv) {
   // Init mpi
