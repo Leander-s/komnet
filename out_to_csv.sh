@@ -1,5 +1,5 @@
 git fetch gitlab
-git merge gitlab/true_measurement
+git merge gitlab/main
 python3 readDataToCSV.py
 git add .
 git commit -m "csv results"
