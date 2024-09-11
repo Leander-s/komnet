@@ -1,5 +1,5 @@
-#include "ping-pong.h"
 #include "arg_util.h"
+#include "ping-pong.h"
 
 int main(int argc, char **argv) {
   // Init mpi
@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
   }
 
   // Handling arguments
-  if(handle_args(argc, argv, rank, &messageSize, &verbose, &cycles)){
-      // return if --help
-      return 0;
+  if (handle_args(argc, argv, rank, &messageSize, &verbose, &cycles)) {
+    // return if --help
+    return 0;
   }
 
   // if root or node
