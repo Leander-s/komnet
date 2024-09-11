@@ -13,7 +13,7 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
 
   for (int i = 0; i < cycles; i++) {
     // use sentTime/recvTime array for multiple nodes
-    double sendTime, recvTime, rootDiff, nodeDiff;
+    double sendTime, recvTime, diff;
     sendTime = MPI_Wtime();
     err = MPI_Send((void *)sendBuffer, messageSize, MPI_CHAR, 1, 1,
                    MPI_COMM_WORLD);
@@ -23,23 +23,20 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
     }
     err = MPI_Recv((void *)recvBuffer, messageSize, MPI_CHAR, 1, 1,
                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-    recvTime = MPI_Wtime();
     if (err != MPI_SUCCESS) {
       printf("Read error in root\n");
       return err;
     }
 
-    err = MPI_Recv((void *)&nodeDiff, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
+    err = MPI_Recv((void *)&recvTime, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
                    MPI_STATUS_IGNORE);
     if(err != MPI_SUCCESS){
         printf("Couldn't read recvTime!\n");
         return err;
     }
 
-    rootDiff = recvTime - sendTime;
-
-    // Choose smaller diff
-    latencySum += rootDiff < nodeDiff ? rootDiff : nodeDiff;
+    diff = sendTime - recvTime;
+    latencySum += diff;
 
     // Print what was read from node i.
     log_print(verbose, "Root: Received from other node : '%s'\n",
@@ -55,14 +52,13 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
   char recvBuffer[messageSize];
   char sendBuffer[messageSize];
   int err;
-  double recvTime, sendTime, diff;
+  double recvTime;
 
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
 
   for (int i = 0; i < cycles; i++) {
 
-    sendTime = MPI_Wtime();
     err = MPI_Recv((void *)recvBuffer, messageSize, MPI_CHAR, 0, 1,
                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     if (err != MPI_SUCCESS) {
@@ -83,9 +79,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
       return err;
     }
 
-    diff = recvTime - sendTime;
-
-    err = MPI_Send((void*)&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
+    err = MPI_Send((void*)&recvTime, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){
         printf("Couldn't send recvTime!\n");
         return err;
