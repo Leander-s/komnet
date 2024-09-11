@@ -1,5 +1,4 @@
 #include "ping-exchange.h"
-#include <mpi.h>
 
 int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   double latencySum = 0;
@@ -10,12 +9,13 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   generate_random_message(sendBuffer, messageSize, time(NULL));
 
   for (int i = 0; i < cycles; i++) {
-    double sendTime, recvTime, latency;
+    double sendTime, recvTime, rootDiff, nodeDiff;
 
     sendTime = MPI_Wtime();
     err = MPI_Sendrecv((void *)sendBuffer, messageSize, MPI_CHAR, 1, 1,
                        (void *)recvBuffer, messageSize, MPI_CHAR, 1, 1,
                        MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    recvTime = MPI_Wtime();
     if (err != MPI_SUCCESS) {
       char errorString[64];
       int errorStringLength;
@@ -23,15 +23,17 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
       printf("Send error in root:%s\n", errorString);
       return err;
     }
-    err = MPI_Recv((void *)&recvTime, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
+    err = MPI_Recv((void *)&nodeDiff, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
                    MPI_STATUS_IGNORE);
     if(err != MPI_SUCCESS){
         printf("Couldn't receive time!\n");
         return err;
     }
 
-    latency = recvTime - sendTime;
-    latencySum += latency;
+    rootDiff = recvTime - sendTime;
+
+    // add the smaller difference onto latencySum
+    latencySum += rootDiff < nodeDiff ? rootDiff : nodeDiff;
 
     // Print what was read from node i.
     log_print(verbose, "Root: Read '%s' from node %d.\n", (char *)recvBuffer,
@@ -39,7 +41,7 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   }
 
   double latency = latencySum / cycles;
-  printf("Half-round-trip latency was %lf ms.\n", latency * 1000);
+  printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
 
   return MPI_SUCCESS;
 }
@@ -48,10 +50,11 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
   int err;
   char recvBuffer[messageSize];
   char sendBuffer[messageSize];
-  double recvTime;
+  double sendTime, recvTime, diff;
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
   for (int i = 0; i < cycles; i++) {
+    sendTime = MPI_Wtime();
     err = MPI_Sendrecv(sendBuffer, messageSize, MPI_CHAR, 0, 1, recvBuffer,
                        messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD,
                        MPI_STATUS_IGNORE);
@@ -61,7 +64,9 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
       return err;
     }
 
-    err = MPI_Send((void*)&recvTime, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
+    diff = recvTime - sendTime;
+
+    err = MPI_Send((void*)&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){
         printf("Couldn't send time!\n");
         return err;
