@@ -36,7 +36,7 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
     }
 
     rootDiff = recvTime - sendTime;
-    latencySum += (rootDiff < nodeDiff) ? rootDiff : nodeDiff;
+    latencySum += rootDiff;
 
     // Print what was read from node i.
     log_print(verbose, "Root: Received from other node : '%s'\n",

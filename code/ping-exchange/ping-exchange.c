@@ -1,7 +1,7 @@
 #include "ping-exchange.h"
 
 int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
-  double sendTime, recvTime, rootDiff, nodeDiff, latencySum;
+  double sendTime, recvTime, rootDiff, nodeDiff, latencySum = 0;
   int err;
   char sendBuffer[messageSize];
   char recvBuffer[messageSize];
@@ -22,7 +22,7 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
       printf("Send error in root:%s\n", errorString);
       return err;
     }
-    err = MPI_Recv((void *)&nodeDiff, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
+    err = MPI_Recv(&nodeDiff, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
                    MPI_STATUS_IGNORE);
     if(err != MPI_SUCCESS){
         printf("Couldn't receive time!\n");
@@ -65,7 +65,7 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
 
     diff = recvTime - sendTime;
 
-    err = MPI_Send((void*)&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
+    err = MPI_Send(&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){
         printf("Couldn't send time!\n");
         return err;
