@@ -28,15 +28,15 @@ srun --partition $part -N 2 -n 2 --ntasks-per-node=1 ./build/pingpong_tests > ./
 srun --partition $part -N 1 -n 2 ./build/pingpong_tests > ./results_92/pp_intra.out &
 
 # task 9.3
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=0 --ntasks-per-node=1 ./build/ping_exchange_tests > ./results_93/pe_inter_0.out & 
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=0 ./build/ping_exchange_tests > ./results_93/pe_inter_0.out & 
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=0 ./build/ping_exchange_tests > ./results_93/pe_intra_0.out &
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=7 --ntasks-per-node=1 ./build/ping_exchange_tests > ./results_93/pe_inter_7.out &
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=7 ./build/ping_exchange_tests > ./results_93/pe_inter_7.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=7 ./build/ping_exchange_tests > ./results_93/pe_intra_7.out &
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=1 --ntasks-per-node=1 ./build/ping_exchange_tests > ./results_93/pe_inter_1.out &
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=1 ./build/ping_exchange_tests > ./results_93/pe_inter_1.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=1 ./build/ping_exchange_tests > ./results_93/pe_intra_1.out &
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=0 --ntasks-per-node=1 ./build/pingpong_tests > ./results_93/pp_inter_0.out &
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=0 ./build/pingpong_tests > ./results_93/pp_inter_0.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=0 ./build/pingpong_tests > ./results_93/pp_intra_0.out &
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=7 --ntasks-per-node=1 ./build/pingpong_tests > ./results_93/pp_inter_7.out &
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=7 ./build/pingpong_tests > ./results_93/pp_inter_7.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=7 ./build/pingpong_tests > ./results_93/pp_intra_7.out &
-srun --partition $part -N 2 -n 2 numactl --cpunodebind=1 --ntasks-per-node=1 ./build/pingpong_tests > ./results_93/pp_inter_1.out &
+srun --partition $part -N 2 -n 2 --ntasks-per-node=1 numactl --cpunodebind=1 ./build/pingpong_tests > ./results_93/pp_inter_1.out &
 srun --partition $part -N 1 -n 2 numactl --cpunodebind=1 ./build/pingpong_tests > ./results_93/pp_intra_1.out &
