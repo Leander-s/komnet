@@ -1,4 +1,3 @@
-#pragma once
 #include <errno.h>
 #include <math.h>
 #include <mpi.h>
