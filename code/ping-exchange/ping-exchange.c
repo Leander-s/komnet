@@ -29,8 +29,10 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
         return err;
     }
 
+    rootDiff = recvTime - sendTime;
+
     // add the smaller difference onto latencySum
-    latencySum += rootDiff < nodeDiff ? rootDiff : nodeDiff;
+    latencySum += (rootDiff < nodeDiff) ? rootDiff : nodeDiff;
 
     // Print what was read from node i.
     log_print(verbose, "Root: Read '%s' from node %d.\n", (char *)recvBuffer,
@@ -38,7 +40,7 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   }
 
   double latency = latencySum / cycles;
-  printf("Half-round-trip latency was %lf ms.\n", latency * 1000);
+  printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
 
   return MPI_SUCCESS;
 }
@@ -61,7 +63,7 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
       return err;
     }
 
-    diff = sendTime - recvTime;
+    diff = recvTime - sendTime;
 
     err = MPI_Send((void*)&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){

@@ -35,8 +35,8 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
         return err;
     }
 
-    rootDiff = sendTime - recvTime;
-    latencySum += rootDiff < nodeDiff ? rootDiff : nodeDiff;
+    rootDiff = recvTime - sendTime;
+    latencySum += (rootDiff < nodeDiff) ? rootDiff : nodeDiff;
 
     // Print what was read from node i.
     log_print(verbose, "Root: Received from other node : '%s'\n",
@@ -78,7 +78,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
       return err;
     }
 
-    diff = sendTime - recvTime;
+    diff = recvTime - sendTime;
 
     err = MPI_Send((void*)&diff, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
     if(err != MPI_SUCCESS){
