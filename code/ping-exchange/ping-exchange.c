@@ -39,7 +39,7 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   }
 
   double latency = latencySum / cycles;
-  printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
+  printf("Half-round-trip latency was %lf ms.\n", latency * 1000);
 
   return MPI_SUCCESS;
 }
