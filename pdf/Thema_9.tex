@@ -140,6 +140,9 @@ Messverfahren verwendet, die allerdings zu keinen signifikanten Unterschieden
 bei den Ergebnissen geführt haben.
 \subsection*{1. Verfahren}
 Wir messen nur in der root Funktion und so dicht wie möglich an den MPI calls.
+In der anderen Node messen wir genauso. Dann senden wir das Ergebnis and die 
+Root-Node. Dort vergleichen wir, und wählen das kleinere Ergebnis, sodass
+Wartezeiten zwischen Kommunikation wegfallen.
 Etwa so:
 \begin{lstlisting}
 // In ping-exchange
@@ -153,7 +156,11 @@ void root_ping_exchange(..){
 
     ..
 
-    latency = (end-start)/2;
+    MPI_Recv(otherLatency, ..);
+    
+    ..
+
+    latency = min((end-start)/2, otherLatency);
 }
 
 // In ping-pong
@@ -168,9 +175,14 @@ void root_ping_pong(..){
 
     ..
 
-    latency = (end-start)/2;
+    MPI_Recv(otherLatency,..);
+
+    ..
+
+    latency = min((end-start)/2, otherLatency);
 }
 \end{lstlisting}
+\newpage
 \subsection*{2. Verfahren}
 Wir messen außerhalb der Ping-Pong/Ping-Exchange Funktionen, in den tests. Hier
 ist der Overhead von allocations/Error-handling/Nachricht-Generierung in der 
@@ -192,6 +204,11 @@ for(..){
 \end{lstlisting}
 Hier messen eigentlich alle Prozesse. Der Einheitlichkeit halber haben wir 
 jedoch nur die Ergebnisse der Root benutzt.
+\subsection*{Direkte Messung}
+Wir haben auch probiert, direkt die Half-round-trip Zeit zu messen, indem wir 
+in der Root node den Sendestartpunkt und in der anderen Node den Punkt des
+Nachrichterhalts messen. Leider sind die Uhren auf verschiedenen Systemen nicht
+synchronisiert, sodass die Zeiten unbrauchbar waren.
 \newpage
 \section*{9.2}
 Hier sollten \textbf{internode} und \textbf{intranode} Kommunikation verglichen 

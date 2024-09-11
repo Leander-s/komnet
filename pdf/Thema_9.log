@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  11 SEP 2024 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  11 SEP 2024 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -233,51 +233,53 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 [3]
 
 [4]
+
+[5]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 207.
+(Font)              <7> on input line 224.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 207.
-<images/Intra-Inter.png, id=25, 1275.76625pt x 697.60625pt>
+(Font)              <5> on input line 224.
+<images/Intra-Inter.png, id=28, 1275.76625pt x 697.60625pt>
 File: images/Intra-Inter.png Graphic file (type png)
 <use images/Intra-Inter.png>
-Package pdftex.def Info: images/Intra-Inter.png  used on input line 209.
+Package pdftex.def Info: images/Intra-Inter.png  used on input line 226.
 (pdftex.def)             Requested size: 483.69687pt x 264.48637pt.
 
 
-[5 <./images/Intra-Inter.png>]
-<images/cpunodebind0.png, id=32, 788.9475pt x 382.42876pt>
+[6 <./images/Intra-Inter.png>]
+<images/cpunodebind0.png, id=36, 788.9475pt x 382.42876pt>
 File: images/cpunodebind0.png Graphic file (type png)
 <use images/cpunodebind0.png>
-Package pdftex.def Info: images/cpunodebind0.png  used on input line 232.
+Package pdftex.def Info: images/cpunodebind0.png  used on input line 249.
 (pdftex.def)             Requested size: 241.84843pt x 117.23288pt.
-<images/cpunodebind1.png, id=33, 783.92876pt x 379.4175pt>
+<images/cpunodebind1.png, id=37, 783.92876pt x 379.4175pt>
 File: images/cpunodebind1.png Graphic file (type png)
 <use images/cpunodebind1.png>
-Package pdftex.def Info: images/cpunodebind1.png  used on input line 236.
+Package pdftex.def Info: images/cpunodebind1.png  used on input line 253.
 (pdftex.def)             Requested size: 241.84843pt x 117.05084pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 230--238
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 247--255
 [][] [] 
  []
 
-<images/cpunodebind2.png, id=34, 785.93625pt x 381.425pt>
+<images/cpunodebind2.png, id=38, 785.93625pt x 381.425pt>
 File: images/cpunodebind2.png Graphic file (type png)
 <use images/cpunodebind2.png>
-Package pdftex.def Info: images/cpunodebind2.png  used on input line 242.
+Package pdftex.def Info: images/cpunodebind2.png  used on input line 259.
 (pdftex.def)             Requested size: 241.84843pt x 117.37332pt.
-<images/cpunodebind3.png, id=35, 784.9325pt x 381.425pt>
+<images/cpunodebind3.png, id=39, 784.9325pt x 381.425pt>
 File: images/cpunodebind3.png Graphic file (type png)
 <use images/cpunodebind3.png>
-Package pdftex.def Info: images/cpunodebind3.png  used on input line 246.
+Package pdftex.def Info: images/cpunodebind3.png  used on input line 263.
 (pdftex.def)             Requested size: 241.84843pt x 117.51883pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 240--248
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 257--265
 [][] [] 
  []
 
 
 
-[6 <./images/cpunodebind0.png> <./images/cpunodebind1.png> <./images/cpunodebin
+[7 <./images/cpunodebind0.png> <./images/cpunodebind1.png> <./images/cpunodebin
 d2.png> <./images/cpunodebind3.png>] (Thema_9.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
@@ -302,9 +304,9 @@ r17.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
 r7.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on Thema_9.pdf (7 pages, 241719 bytes).
+Output written on Thema_9.pdf (8 pages, 243743 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
