@@ -1,4 +1,5 @@
 #include "ping-pong.h"
+#include <mpi.h>
 
 int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
   char recvBuffer[messageSize];
@@ -22,10 +23,16 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
     }
     err = MPI_Recv((void *)recvBuffer, messageSize, MPI_CHAR, 1, 1,
                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-    recvTime = MPI_Wtime();
     if (err != MPI_SUCCESS) {
       printf("Read error in root\n");
       return err;
+    }
+
+    err = MPI_Recv((void *)&recvTime, 1, MPI_DOUBLE, 1, 1, MPI_COMM_WORLD,
+                   MPI_STATUS_IGNORE);
+    if(err != MPI_SUCCESS){
+        printf("Couldn't read recvTime!\n");
+        return err;
     }
 
     latency = recvTime - sendTime;
@@ -45,6 +52,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
   char recvBuffer[messageSize];
   char sendBuffer[messageSize];
   int err;
+  double recvTime;
 
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
@@ -52,6 +60,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
   for (int i = 0; i < cycles; i++) {
     err = MPI_Recv((void *)recvBuffer, messageSize, MPI_CHAR, 0, 1,
                    MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    recvTime = MPI_Wtime();
     if (err != MPI_SUCCESS) {
       log_print(verbose, "Read error in %d\n", rank);
       return err;
@@ -67,6 +76,12 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
     if (err != MPI_SUCCESS) {
       printf("Send error in %d\n", rank);
       return err;
+    }
+
+    err = MPI_Send((void*)&recvTime, 1, MPI_DOUBLE, 0, 1, MPI_COMM_WORLD);
+    if(err != MPI_SUCCESS){
+        printf("Couldn't send recvTime!\n");
+        return err;
     }
   }
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  10 SEP 2024 13:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  11 SEP 2024 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -231,51 +231,53 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 [2]
 
 [3]
+
+[4]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 149.
+(Font)              <7> on input line 207.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 149.
-<images/Intra-Inter.png, id=22, 1275.76625pt x 697.60625pt>
+(Font)              <5> on input line 207.
+<images/Intra-Inter.png, id=25, 1275.76625pt x 697.60625pt>
 File: images/Intra-Inter.png Graphic file (type png)
 <use images/Intra-Inter.png>
-Package pdftex.def Info: images/Intra-Inter.png  used on input line 151.
+Package pdftex.def Info: images/Intra-Inter.png  used on input line 209.
 (pdftex.def)             Requested size: 483.69687pt x 264.48637pt.
 
 
-[4 <./images/Intra-Inter.png>]
-<images/cpunodebind0.png, id=29, 788.9475pt x 382.42876pt>
+[5 <./images/Intra-Inter.png>]
+<images/cpunodebind0.png, id=32, 788.9475pt x 382.42876pt>
 File: images/cpunodebind0.png Graphic file (type png)
 <use images/cpunodebind0.png>
-Package pdftex.def Info: images/cpunodebind0.png  used on input line 174.
+Package pdftex.def Info: images/cpunodebind0.png  used on input line 232.
 (pdftex.def)             Requested size: 241.84843pt x 117.23288pt.
-<images/cpunodebind1.png, id=30, 783.92876pt x 379.4175pt>
+<images/cpunodebind1.png, id=33, 783.92876pt x 379.4175pt>
 File: images/cpunodebind1.png Graphic file (type png)
 <use images/cpunodebind1.png>
-Package pdftex.def Info: images/cpunodebind1.png  used on input line 178.
+Package pdftex.def Info: images/cpunodebind1.png  used on input line 236.
 (pdftex.def)             Requested size: 241.84843pt x 117.05084pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 172--180
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 230--238
 [][] [] 
  []
 
-<images/cpunodebind2.png, id=31, 785.93625pt x 381.425pt>
+<images/cpunodebind2.png, id=34, 785.93625pt x 381.425pt>
 File: images/cpunodebind2.png Graphic file (type png)
 <use images/cpunodebind2.png>
-Package pdftex.def Info: images/cpunodebind2.png  used on input line 184.
+Package pdftex.def Info: images/cpunodebind2.png  used on input line 242.
 (pdftex.def)             Requested size: 241.84843pt x 117.37332pt.
-<images/cpunodebind3.png, id=32, 784.9325pt x 381.425pt>
+<images/cpunodebind3.png, id=35, 784.9325pt x 381.425pt>
 File: images/cpunodebind3.png Graphic file (type png)
 <use images/cpunodebind3.png>
-Package pdftex.def Info: images/cpunodebind3.png  used on input line 188.
+Package pdftex.def Info: images/cpunodebind3.png  used on input line 246.
 (pdftex.def)             Requested size: 241.84843pt x 117.51883pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 182--190
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 240--248
 [][] [] 
  []
 
 
 
-[5 <./images/cpunodebind0.png> <./images/cpunodebind1.png> <./images/cpunodebin
+[6 <./images/cpunodebind0.png> <./images/cpunodebind1.png> <./images/cpunodebin
 d2.png> <./images/cpunodebind3.png>] (Thema_9.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
@@ -283,10 +285,10 @@ L3 programming layer <2024-08-16>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5056 strings out of 473900
- 82357 string characters out of 5730314
+ 5057 strings out of 473900
+ 82370 string characters out of 5730314
  1956957 words of memory out of 5000000
- 27928 multiletter control sequences out of 15000+600000
+ 27929 multiletter control sequences out of 15000+600000
  562827 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,9n,65p,246b,1241s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -300,9 +302,9 @@ r17.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
 r7.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></home/leander/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on Thema_9.pdf (6 pages, 237790 bytes).
+Output written on Thema_9.pdf (7 pages, 241719 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -134,13 +134,68 @@ sieht die Funktion genauso aus wie die root Funktion. In
 der Realität würden natürlich noch src und dst Parameter dazukommen, die sich 
 unterscheiden.
 \newpage
+\section*{Messverfahren}
+In den nächsten Aufgaben ging es um Messungeng. Wir haben zwei verschiedene 
+Messverfahren verwendet, die allerdings zu keinen signifikanten Unterschieden 
+bei den Ergebnissen geführt haben.
+\subsection*{1. Verfahren}
+Wir messen nur in der root Funktion und so dicht wie möglich an den MPI calls.
+Etwa so:
+\begin{lstlisting}
+// In ping-exchange
+void root_ping_exchange(..){
+
+    ..
+
+    start = MPI_Wtime();
+    MPI_Sendrecv(..);
+    end = MPI_Wtime();
+
+    ..
+
+    latency = (end-start)/2;
+}
+
+// In ping-pong
+void root_ping_pong(..){
+
+    ..
+
+    start = MPI_Wtime();
+    MPI_Send(..);
+    MPI_Recv(..);
+    end = MPI_Wtime();
+
+    ..
+
+    latency = (end-start)/2;
+}
+\end{lstlisting}
+\subsection*{2. Verfahren}
+Wir messen außerhalb der Ping-Pong/Ping-Exchange Funktionen, in den tests. Hier
+ist der Overhead von allocations/Error-handling/Nachricht-Generierung in der 
+Messung dabei. Die Ping-Pong/Ping-Exchange Funktionen werden hier in der 
+\verb|run_test| Funktion aufgerufen.
+\begin{lstlisting}
+for(..){
+
+    ..
+
+    start = MPI_Wtime();
+    run_test(..);
+    end = MPI_Wtime();
+
+    ..
+
+    latency = (end-start)/2;
+}
+\end{lstlisting}
+Hier messen eigentlich alle Prozesse. Der Einheitlichkeit halber haben wir 
+jedoch nur die Ergebnisse der Root benutzt.
+\newpage
 \section*{9.2}
 Hier sollten \textbf{internode} und \textbf{intranode} Kommunikation verglichen 
-werden.
-\subsection*{Messverfahren}
-
-\subsection*{Ergebnisse}
-Wir den gleichen Test einmal mit \newline
+werden. Wir haben den gleichen Test einmal mit \newline
 \verb|srun --partition <partition> -N 2 -n 2 ./test| \newline
 und einmal mit \newline
 \verb|srun --partition <partition> -N 1 -n 2 ./test| \newline
