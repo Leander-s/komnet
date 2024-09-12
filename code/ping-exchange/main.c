@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 
   // if root or node
   int i = 1;
-  while (1) {
+  for(;;){
     printf("%d : ", i);
     i++;
     if (rank == 0) {
