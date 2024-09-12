@@ -1,127 +1,127 @@
-OMPI_MCA_btl is set to: ^openib,ofi
+OMPI_MCA_btl is set to: tcp,self
 Results for 2^0:
-Result number 1: Half-round-trip latency was 0.004423 ms.
-Result number 2: Half-round-trip latency was 0.000229 ms.
-Result number 3: Half-round-trip latency was 0.000245 ms.
-Result number 4: Half-round-trip latency was 0.000493 ms.
-Result number 5: Half-round-trip latency was 0.000207 ms.
-Results for 2^1:
-Result number 1: Half-round-trip latency was 0.000210 ms.
-Result number 2: Half-round-trip latency was 0.000667 ms.
-Result number 3: Half-round-trip latency was 0.000216 ms.
-Result number 4: Half-round-trip latency was 0.000208 ms.
-Result number 5: Half-round-trip latency was 0.000214 ms.
-Results for 2^2:
-Result number 1: Half-round-trip latency was 0.000202 ms.
-Result number 2: Half-round-trip latency was 0.000200 ms.
-Result number 3: Half-round-trip latency was 0.000385 ms.
-Result number 4: Half-round-trip latency was 0.000208 ms.
-Result number 5: Half-round-trip latency was 0.000202 ms.
-Results for 2^3:
-Result number 1: Half-round-trip latency was 0.000201 ms.
-Result number 2: Half-round-trip latency was 0.000205 ms.
-Result number 3: Half-round-trip latency was 0.000210 ms.
-Result number 4: Half-round-trip latency was 0.000205 ms.
-Result number 5: Half-round-trip latency was 0.000201 ms.
-Results for 2^4:
-Result number 1: Half-round-trip latency was 0.000203 ms.
-Result number 2: Half-round-trip latency was 0.000206 ms.
-Result number 3: Half-round-trip latency was 0.000204 ms.
-Result number 4: Half-round-trip latency was 0.000204 ms.
-Result number 5: Half-round-trip latency was 0.000199 ms.
-Results for 2^5:
-Result number 1: Half-round-trip latency was 0.000354 ms.
-Result number 2: Half-round-trip latency was 0.000248 ms.
-Result number 3: Half-round-trip latency was 0.000218 ms.
-Result number 4: Half-round-trip latency was 0.000221 ms.
-Result number 5: Half-round-trip latency was 0.000209 ms.
-Results for 2^6:
-Result number 1: Half-round-trip latency was 0.000220 ms.
-Result number 2: Half-round-trip latency was 0.000216 ms.
+Result number 1: Half-round-trip latency was 0.002806 ms.
+Result number 2: Half-round-trip latency was 0.000221 ms.
 Result number 3: Half-round-trip latency was 0.000227 ms.
-Result number 4: Half-round-trip latency was 0.000234 ms.
-Result number 5: Half-round-trip latency was 0.000218 ms.
+Result number 4: Half-round-trip latency was 0.000214 ms.
+Result number 5: Half-round-trip latency was 0.000220 ms.
+Results for 2^1:
+Result number 1: Half-round-trip latency was 0.000225 ms.
+Result number 2: Half-round-trip latency was 0.000550 ms.
+Result number 3: Half-round-trip latency was 0.000218 ms.
+Result number 4: Half-round-trip latency was 0.000209 ms.
+Result number 5: Half-round-trip latency was 0.000236 ms.
+Results for 2^2:
+Result number 1: Half-round-trip latency was 0.000210 ms.
+Result number 2: Half-round-trip latency was 0.000213 ms.
+Result number 3: Half-round-trip latency was 0.000443 ms.
+Result number 4: Half-round-trip latency was 0.000216 ms.
+Result number 5: Half-round-trip latency was 0.000219 ms.
+Results for 2^3:
+Result number 1: Half-round-trip latency was 0.000225 ms.
+Result number 2: Half-round-trip latency was 0.000219 ms.
+Result number 3: Half-round-trip latency was 0.000219 ms.
+Result number 4: Half-round-trip latency was 0.000217 ms.
+Result number 5: Half-round-trip latency was 0.000234 ms.
+Results for 2^4:
+Result number 1: Half-round-trip latency was 0.000213 ms.
+Result number 2: Half-round-trip latency was 0.000216 ms.
+Result number 3: Half-round-trip latency was 0.000228 ms.
+Result number 4: Half-round-trip latency was 0.000213 ms.
+Result number 5: Half-round-trip latency was 0.000210 ms.
+Results for 2^5:
+Result number 1: Half-round-trip latency was 0.000367 ms.
+Result number 2: Half-round-trip latency was 0.000238 ms.
+Result number 3: Half-round-trip latency was 0.000234 ms.
+Result number 4: Half-round-trip latency was 0.000365 ms.
+Result number 5: Half-round-trip latency was 0.000237 ms.
+Results for 2^6:
+Result number 1: Half-round-trip latency was 0.000238 ms.
+Result number 2: Half-round-trip latency was 0.000262 ms.
+Result number 3: Half-round-trip latency was 0.000236 ms.
+Result number 4: Half-round-trip latency was 0.000237 ms.
+Result number 5: Half-round-trip latency was 0.000224 ms.
 Results for 2^7:
-Result number 1: Half-round-trip latency was 0.003842 ms.
-Result number 2: Half-round-trip latency was 0.001316 ms.
-Result number 3: Half-round-trip latency was 0.001180 ms.
-Result number 4: Half-round-trip latency was 0.002103 ms.
-Result number 5: Half-round-trip latency was 0.001454 ms.
+Result number 1: Half-round-trip latency was 0.003052 ms.
+Result number 2: Half-round-trip latency was 0.001782 ms.
+Result number 3: Half-round-trip latency was 0.002418 ms.
+Result number 4: Half-round-trip latency was 0.001573 ms.
+Result number 5: Half-round-trip latency was 0.001310 ms.
 Results for 2^8:
-Result number 1: Half-round-trip latency was 0.001720 ms.
-Result number 2: Half-round-trip latency was 0.001291 ms.
-Result number 3: Half-round-trip latency was 0.002096 ms.
-Result number 4: Half-round-trip latency was 0.001204 ms.
-Result number 5: Half-round-trip latency was 0.001208 ms.
+Result number 1: Half-round-trip latency was 0.001485 ms.
+Result number 2: Half-round-trip latency was 0.001311 ms.
+Result number 3: Half-round-trip latency was 0.001952 ms.
+Result number 4: Half-round-trip latency was 0.001093 ms.
+Result number 5: Half-round-trip latency was 0.001460 ms.
 Results for 2^9:
-Result number 1: Half-round-trip latency was 0.001444 ms.
-Result number 2: Half-round-trip latency was 0.001699 ms.
-Result number 3: Half-round-trip latency was 0.002481 ms.
-Result number 4: Half-round-trip latency was 0.000639 ms.
-Result number 5: Half-round-trip latency was 0.000672 ms.
+Result number 1: Half-round-trip latency was 0.001579 ms.
+Result number 2: Half-round-trip latency was 0.002332 ms.
+Result number 3: Half-round-trip latency was 0.002183 ms.
+Result number 4: Half-round-trip latency was 0.000659 ms.
+Result number 5: Half-round-trip latency was 0.001019 ms.
 Results for 2^10:
-Result number 1: Half-round-trip latency was 0.001144 ms.
-Result number 2: Half-round-trip latency was 0.002886 ms.
-Result number 3: Half-round-trip latency was 0.001306 ms.
-Result number 4: Half-round-trip latency was 0.001596 ms.
-Result number 5: Half-round-trip latency was 0.001109 ms.
+Result number 1: Half-round-trip latency was 0.001062 ms.
+Result number 2: Half-round-trip latency was 0.004074 ms.
+Result number 3: Half-round-trip latency was 0.000964 ms.
+Result number 4: Half-round-trip latency was 0.001368 ms.
+Result number 5: Half-round-trip latency was 0.000973 ms.
 Results for 2^11:
-Result number 1: Half-round-trip latency was 0.003042 ms.
-Result number 2: Half-round-trip latency was 0.003689 ms.
-Result number 3: Half-round-trip latency was 0.002672 ms.
-Result number 4: Half-round-trip latency was 0.002645 ms.
-Result number 5: Half-round-trip latency was 0.002536 ms.
+Result number 1: Half-round-trip latency was 0.003186 ms.
+Result number 2: Half-round-trip latency was 0.004416 ms.
+Result number 3: Half-round-trip latency was 0.002462 ms.
+Result number 4: Half-round-trip latency was 0.002306 ms.
+Result number 5: Half-round-trip latency was 0.001629 ms.
 Results for 2^12:
-Result number 1: Half-round-trip latency was 0.004673 ms.
-Result number 2: Half-round-trip latency was 0.006340 ms.
-Result number 3: Half-round-trip latency was 0.004967 ms.
-Result number 4: Half-round-trip latency was 0.005798 ms.
-Result number 5: Half-round-trip latency was 0.002702 ms.
+Result number 1: Half-round-trip latency was 0.005786 ms.
+Result number 2: Half-round-trip latency was 0.004985 ms.
+Result number 3: Half-round-trip latency was 0.004078 ms.
+Result number 4: Half-round-trip latency was 0.005770 ms.
+Result number 5: Half-round-trip latency was 0.003337 ms.
 Results for 2^13:
-Result number 1: Half-round-trip latency was 0.009151 ms.
-Result number 2: Half-round-trip latency was 0.006676 ms.
-Result number 3: Half-round-trip latency was 0.006678 ms.
-Result number 4: Half-round-trip latency was 0.006052 ms.
-Result number 5: Half-round-trip latency was 0.005457 ms.
+Result number 1: Half-round-trip latency was 0.009159 ms.
+Result number 2: Half-round-trip latency was 0.006667 ms.
+Result number 3: Half-round-trip latency was 0.006837 ms.
+Result number 4: Half-round-trip latency was 0.006049 ms.
+Result number 5: Half-round-trip latency was 0.005738 ms.
 Results for 2^14:
-Result number 1: Half-round-trip latency was 0.014996 ms.
-Result number 2: Half-round-trip latency was 0.012398 ms.
-Result number 3: Half-round-trip latency was 0.013733 ms.
-Result number 4: Half-round-trip latency was 0.011951 ms.
-Result number 5: Half-round-trip latency was 0.012326 ms.
+Result number 1: Half-round-trip latency was 0.013986 ms.
+Result number 2: Half-round-trip latency was 0.011873 ms.
+Result number 3: Half-round-trip latency was 0.012560 ms.
+Result number 4: Half-round-trip latency was 0.011750 ms.
+Result number 5: Half-round-trip latency was 0.012427 ms.
 Results for 2^15:
-Result number 1: Half-round-trip latency was 0.023334 ms.
-Result number 2: Half-round-trip latency was 0.022726 ms.
-Result number 3: Half-round-trip latency was 0.024673 ms.
-Result number 4: Half-round-trip latency was 0.024799 ms.
-Result number 5: Half-round-trip latency was 0.024253 ms.
+Result number 1: Half-round-trip latency was 0.020028 ms.
+Result number 2: Half-round-trip latency was 0.019273 ms.
+Result number 3: Half-round-trip latency was 0.018486 ms.
+Result number 4: Half-round-trip latency was 0.020554 ms.
+Result number 5: Half-round-trip latency was 0.018210 ms.
 Results for 2^16:
-Result number 1: Half-round-trip latency was 0.048867 ms.
-Result number 2: Half-round-trip latency was 0.050737 ms.
-Result number 3: Half-round-trip latency was 0.048520 ms.
-Result number 4: Half-round-trip latency was 0.047514 ms.
-Result number 5: Half-round-trip latency was 0.051233 ms.
+Result number 1: Half-round-trip latency was 0.034641 ms.
+Result number 2: Half-round-trip latency was 0.034655 ms.
+Result number 3: Half-round-trip latency was 0.035836 ms.
+Result number 4: Half-round-trip latency was 0.036102 ms.
+Result number 5: Half-round-trip latency was 0.036161 ms.
 Results for 2^17:
-Result number 1: Half-round-trip latency was 0.095619 ms.
-Result number 2: Half-round-trip latency was 0.065546 ms.
-Result number 3: Half-round-trip latency was 0.033431 ms.
-Result number 4: Half-round-trip latency was 0.031350 ms.
-Result number 5: Half-round-trip latency was 0.034509 ms.
+Result number 1: Half-round-trip latency was 0.069110 ms.
+Result number 2: Half-round-trip latency was 0.023215 ms.
+Result number 3: Half-round-trip latency was 0.023258 ms.
+Result number 4: Half-round-trip latency was 0.023509 ms.
+Result number 5: Half-round-trip latency was 0.023620 ms.
 Results for 2^18:
-Result number 1: Half-round-trip latency was 0.076441 ms.
-Result number 2: Half-round-trip latency was 0.007382 ms.
-Result number 3: Half-round-trip latency was 0.007797 ms.
-Result number 4: Half-round-trip latency was 0.007380 ms.
-Result number 5: Half-round-trip latency was 0.007856 ms.
+Result number 1: Half-round-trip latency was 0.083530 ms.
+Result number 2: Half-round-trip latency was 0.007808 ms.
+Result number 3: Half-round-trip latency was 0.007537 ms.
+Result number 4: Half-round-trip latency was 0.007505 ms.
+Result number 5: Half-round-trip latency was 0.007784 ms.
 Results for 2^19:
-Result number 1: Half-round-trip latency was 0.091962 ms.
-Result number 2: Half-round-trip latency was 0.015723 ms.
-Result number 3: Half-round-trip latency was 0.015794 ms.
-Result number 4: Half-round-trip latency was 0.015605 ms.
-Result number 5: Half-round-trip latency was 0.015836 ms.
+Result number 1: Half-round-trip latency was 0.097441 ms.
+Result number 2: Half-round-trip latency was 0.015570 ms.
+Result number 3: Half-round-trip latency was 0.015333 ms.
+Result number 4: Half-round-trip latency was 0.016114 ms.
+Result number 5: Half-round-trip latency was 0.015287 ms.
 Results for 2^20:
-Result number 1: Half-round-trip latency was 0.112760 ms.
-Result number 2: Half-round-trip latency was 0.029521 ms.
-Result number 3: Half-round-trip latency was 0.029606 ms.
-Result number 4: Half-round-trip latency was 0.029542 ms.
-Result number 5: Half-round-trip latency was 0.030141 ms.
+Result number 1: Half-round-trip latency was 0.118525 ms.
+Result number 2: Half-round-trip latency was 0.029595 ms.
+Result number 3: Half-round-trip latency was 0.030209 ms.
+Result number 4: Half-round-trip latency was 0.030223 ms.
+Result number 5: Half-round-trip latency was 0.029407 ms.
