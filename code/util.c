@@ -20,6 +20,9 @@ void generate_random_message(char *buffer, int bufferSize, int seed) {
 
   // Just return a bunch of a (maybe less interference)
   memset(buffer, 'a', bufferSize);
+
+  // Making sure we don't print the stack when verbose
+  buffer[bufferSize - 1] = 0;
 }
 
 int root_print(int rank, const char *format, ...){

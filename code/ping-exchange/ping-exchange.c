@@ -54,7 +54,7 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
   for (int i = 0; i < cycles; i++) {
     sendTime = MPI_Wtime();
-    err = MPI_Sendrecv(sendBuffer, messageSize, MPI_CHAR, 0, 1, recvBuffer,
+    err = MPI_Sendrecv((void*)sendBuffer, messageSize, MPI_CHAR, 0, 1, (void*)recvBuffer,
                        messageSize, MPI_CHAR, 0, 1, MPI_COMM_WORLD,
                        MPI_STATUS_IGNORE);
     recvTime = MPI_Wtime();
