@@ -18,8 +18,6 @@ srun --partition $part -N 2 -n 2 --ntasks-per-node=1 ./build/pingpong_tests > ./
 srun --partition $part -N 1 -n 2 ./build/pingpong_tests > ./results_infiniband/ib_pp_intra.out &
 
 export OMPI_MCA_btl=tcp,self
-export OMPI_MCA_btl_sndbuf=2000000
-export OMPI_MCA_btl_rcvbuf=2000000
 
 # task 9.2
 srun --partition $part -N 2 -n 2 --ntasks-per-node=1 ./build/ping_exchange_tests > ./results_92/pe_inter.out &
