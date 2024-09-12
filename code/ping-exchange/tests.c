@@ -1,7 +1,7 @@
 #include "ping-exchange.h"
 #include <unistd.h>
 
-#define TEST_CYCLES 20
+#define TEST_CYCLES 50
 
 int run_test(int messageSize, int rank, int size) {
   int err;
