@@ -1,13 +1,15 @@
 #include "ping-exchange.h"
 #include <unistd.h>
 
+#define TEST_CYCLES 20
+
 int run_test(int messageSize, int rank, int size) {
   int err;
   // if root or node
   if (rank == 0) {
-    err = ping_exchange_root_run(size, messageSize, 0, 5);
+    err = ping_exchange_root_run(size, messageSize, 0, TEST_CYCLES);
   } else {
-    err = ping_exchange_node_run(rank, messageSize, 0, 5);
+    err = ping_exchange_node_run(rank, messageSize, 0, TEST_CYCLES);
   }
   return err;
 }
