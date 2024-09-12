@@ -1,5 +1,6 @@
 #include "arg_util.h"
 #include "ping-pong.h"
+#include <unistd.h>
 
 int main(int argc, char **argv) {
   // Init mpi
@@ -29,10 +30,16 @@ int main(int argc, char **argv) {
   }
 
   // if root or node
-  if (rank == 0) {
-    err = pingpong_root_run(size, messageSize, verbose, cycles);
-  } else {
-    err = pingpong_node_run(rank, messageSize, verbose, cycles);
+  int i = 1;
+  while (1) {
+    printf("%d : ", i);
+    i++;
+    if (rank == 0) {
+      err = pingpong_root_run(size, messageSize, verbose, cycles);
+    } else {
+      err = pingpong_node_run(rank, messageSize, verbose, cycles);
+    }
+    sleep(1);
   }
 
   // Deinit mpi

@@ -1,5 +1,4 @@
 #include "ping-pong.h"
-#include <mpi.h>
 
 int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
   char recvBuffer[messageSize];
