@@ -3,8 +3,8 @@
 int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   double sendTime, recvTime, rootDiff, nodeDiff, latencySum = 0;
   int err;
-  char sendBuffer[messageSize];
-  char recvBuffer[messageSize];
+  char *sendBuffer = (char*)malloc(messageSize);
+  char *recvBuffer = (char*)malloc(messageSize);
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL));
 
@@ -42,13 +42,15 @@ int ping_exchange_root_run(int size, int messageSize, int verbose, int cycles) {
   double latency = latencySum / cycles;
   printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
 
+  free(sendBuffer);
+  free(recvBuffer);
   return MPI_SUCCESS;
 }
 
 int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
   int err;
-  char recvBuffer[messageSize];
-  char sendBuffer[messageSize];
+  char *recvBuffer = (char*)malloc(messageSize);
+  char *sendBuffer = (char*)malloc(messageSize);
   double sendTime, recvTime, diff;
   memset(recvBuffer, 0, messageSize);
   generate_random_message(sendBuffer, messageSize, time(NULL) + rank);
@@ -76,5 +78,7 @@ int ping_exchange_node_run(int rank, int messageSize, int verbose, int cycles) {
               (char *)recvBuffer);
   }
 
+  free(sendBuffer);
+  free(recvBuffer);
   return MPI_SUCCESS;
 }

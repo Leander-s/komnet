@@ -1,8 +1,8 @@
 #include "ping-pong.h"
 
 int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
-  char recvBuffer[messageSize];
-  char sendBuffer[messageSize];
+  char *recvBuffer = (char*)malloc(messageSize);
+  char *sendBuffer = (char*)malloc(messageSize);
   int err;
   double sendTime, recvTime, rootDiff, nodeDiff, latencySum = 0;
 
@@ -44,12 +44,15 @@ int pingpong_root_run(int size, int messageSize, int verbose, int cycles) {
 
   double latency = latencySum / cycles;
   printf("Half-round-trip latency was %lf ms.\n", latency / 2 * 1000);
+
+  free(sendBuffer);
+  free(recvBuffer);
   return MPI_SUCCESS;
 }
 
 int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
-  char recvBuffer[messageSize];
-  char sendBuffer[messageSize];
+  char *recvBuffer = (char*)malloc(messageSize);
+  char *sendBuffer = (char*)malloc(messageSize);
   int err;
   double sendTime, recvTime, diff;
 
@@ -86,5 +89,7 @@ int pingpong_node_run(int rank, int messageSize, int verbose, int cycles) {
     }
   }
 
+  free(sendBuffer);
+  free(recvBuffer);
   return MPI_SUCCESS;
 }
