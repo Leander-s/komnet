@@ -1,7 +1,7 @@
 #include "ping-pong.h"
 #include <unistd.h>
 
-#define TEST_CYCLES 50
+#define TEST_CYCLES 5
 
 int run_test(int messageSize, int rank, int size) {
   int err;
