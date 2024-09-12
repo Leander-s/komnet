@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 
   // if root or node
   for(int i = 0; i < 5; i++){
-    printf("%d : ", i);
+    root_print(rank, "%d : ", i);
     if (rank == 0) {
       err = ping_exchange_root_run(size, messageSize, verbose, cycles);
     } else {
