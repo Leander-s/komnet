@@ -5,9 +5,9 @@ int run_test(int messageSize, int rank, int size) {
   int err;
   // if root or node
   if (rank == 0) {
-    err = ping_exchange_root_run(size, messageSize, 0, 100);
+    err = ping_exchange_root_run(size, messageSize, 0, 5);
   } else {
-    err = ping_exchange_node_run(rank, messageSize, 0, 100);
+    err = ping_exchange_node_run(rank, messageSize, 0, 5);
   }
   return err;
 }
