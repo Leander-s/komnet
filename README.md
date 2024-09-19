@@ -30,10 +30,10 @@ tests:<br/>
 run_tests_async.sh runs all tests in the background. Much faster
 
 ***
-Defaults are:</br>
-size = 10 (2<sup>10</sup>)</br>
-cycles = 5</br>
-partition = largemem</br>
+Defaults are:<br/>
+size = 10 (2<sup>10</sup>)<br/>
+cycles = 5<br/>
+partition = largemem<br/>
 
 ping-pong:<br/>
 
