@@ -21,7 +21,7 @@ Parameters are always optional<br/>
 
 tests:<br/>
 
-	./run_tests.sh <partition<br\>
+	./run_tests.sh <partition><br\>
 	./run_tests_async.sh <partition> (recommended)
 <partition> is largemem by default<br/>
 9.2 outputs in ./results_92<br/>
