@@ -22,9 +22,12 @@ Parameters are always optional<br/>
 tests:<br/>
 
         ./run_tests.sh <partition> 
+	./run_tests_async.sh <partition> (recommended)
 <partition> is largemem by default<br/>
 9.2 outputs in ./results_92<br/>
 9.3 outputs in ./results_93<br/>
+
+run_tests_async.sh runs all tests in the background. Much faster
 
 ***
 
