@@ -30,10 +30,14 @@ tests:<br/>
 run_tests_async.sh runs all tests in the background. Much faster
 
 ***
+Defaults are:</br>
+size = 10 (2<sup>10</sup>)</br>
+cycles = 5</br>
+partition = largemem</br>
 
 ping-pong:<br/>
 
-        ./run_ping_pong.sh -s <size> -c <cycles>
+        ./run_ping_pong.sh -s <size> -c <cycles> -p <partition>
 ping-exchange:<br/>
 
         ./run_ping_exchange.sh -s <size> -c <cycles>
