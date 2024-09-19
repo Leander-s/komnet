@@ -40,7 +40,7 @@ ping-pong:<br/>
         ./run_ping_pong.sh -s <size> -c <cycles> -p <partition>
 ping-exchange:<br/>
 
-        ./run_ping_exchange.sh -s <size> -c <cycles>
+        ./run_ping_exchange.sh -s <size> -c <cycles> -p <partition>
 
 
 <!-- This is commented --> 
