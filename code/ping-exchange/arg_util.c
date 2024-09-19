@@ -34,6 +34,7 @@ int handle_args(int argc, char **argv, int rank, int *messageSize, int *verbose,
       *cycles = string_to_int(argv[i + 1]);
       root_print(rank, "Using %d cycles.\n", *cycles);
       i++;
+      continue;
     }
 
     if (strcmp(argv[i], "--help") == 0) {
